@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="root" prefHeight="400.0" prefWidth="639.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.MainViewController">
+   <children>
+      <MenuBar layoutX="5.0" layoutY="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="miNew" mnemonicParsing="false" onAction="#miNewOnAction" text="New" />
+                  <MenuItem fx:id="miNewWindow" mnemonicParsing="false" onAction="#miNewWindowOnAction" text="New Window" />
+                  <MenuItem fx:id="miOpen" mnemonicParsing="false" onAction="#miOpenOnAction" text="Open" />
+                  <MenuItem fx:id="miSave" mnemonicParsing="false" onAction="#miSaveOnAction" text="Save" />
+                  <MenuItem fx:id="miExit" mnemonicParsing="false" onAction="#miExitOnAction" text="Exit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem fx:id="miCut" mnemonicParsing="false" onAction="#miCutOnAction" text="Cut" />
+                  <MenuItem fx:id="miCopy" mnemonicParsing="false" onAction="#miCopyOnAction" text="Copy" />
+                  <MenuItem fx:id="miDelete" mnemonicParsing="false" onAction="#miDeleteOnAction" text="Delete" />
+                  <MenuItem fx:id="miFind" mnemonicParsing="false" onAction="#miFindOnAction" text="Find" />
+                  <MenuItem fx:id="miReplace" mnemonicParsing="false" onAction="#miReplaceOnAction" text="Replace" />
+                  <MenuItem fx:id="miSelectAll" mnemonicParsing="false" onAction="#miSelectAllOnAction" text="Select all" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Options">
+               <items>
+                  <MenuItem fx:id="miChangeFont" mnemonicParsing="false" onAction="#miChangeFontOnAction" text="Change font" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem fx:id="miHelp" mnemonicParsing="false" onAction="#miHelpOnAction" text="Help" />
+                  <MenuItem fx:id="miAboutUs" mnemonicParsing="false" onAction="#miAboutUsOnAction" text="About us" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <TextArea fx:id="txtNotePad" layoutX="14.0" layoutY="33.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.0" />
+   </children>
+</AnchorPane>
