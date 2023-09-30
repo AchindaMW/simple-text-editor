@@ -8,10 +8,6 @@ import javafx.scene.layout.AnchorPane;
 
 public class MainViewController {
 
-    public void initialize(){
-        
-    }
-
     @FXML
     private MenuItem miAboutUs;
 
@@ -60,73 +56,77 @@ public class MainViewController {
     @FXML
     private TextArea txtNotePad;
 
-    @FXML
-    void miAboutUsOnAction(ActionEvent event) {
+    public void initialize(){
 
     }
 
     @FXML
-    void miChangeFontOnAction(ActionEvent event) {
+    void miAboutUsOnAction(ActionEvent e) {
 
     }
 
     @FXML
-    void miCopyOnAction(ActionEvent event) {
+    void miChangeFontOnAction(ActionEvent e) {
 
     }
 
     @FXML
-    void miCutOnAction(ActionEvent event) {
+    void miCopyOnAction(ActionEvent e) {
 
     }
 
     @FXML
-    void miDeleteOnAction(ActionEvent event) {
+    void miCutOnAction(ActionEvent e) {
 
     }
 
     @FXML
-    void miExitOnAction(ActionEvent event) {
+    void miDeleteOnAction(ActionEvent e) {
 
     }
 
     @FXML
-    void miFindOnAction(ActionEvent event) {
+    void miExitOnAction(ActionEvent e) {
+    System.exit(1);
+    }
+
+    @FXML
+    void miFindOnAction(ActionEvent e) {
 
     }
 
     @FXML
-    void miHelpOnAction(ActionEvent event) {
+    void miHelpOnAction(ActionEvent e) {
 
     }
 
     @FXML
-    void miNewOnAction(ActionEvent event) {
+    void miNewOnAction(ActionEvent e) {
 
     }
 
     @FXML
-    void miNewWindowOnAction(ActionEvent event) {
+    void miNewWindowOnAction(ActionEvent e) {
 
     }
 
     @FXML
-    void miOpenOnAction(ActionEvent event) {
+    void miOpenOnAction(ActionEvent e) {
 
     }
 
     @FXML
-    void miReplaceOnAction(ActionEvent event) {
+    void miReplaceOnAction(ActionEvent e) {
 
     }
 
     @FXML
-    void miSaveOnAction(ActionEvent event) {
+    void miSaveOnAction(ActionEvent e) {
 
     }
 
     @FXML
-    void miSelectAllOnAction(ActionEvent event) {
+    void miSelectAllOnAction(ActionEvent e) {
 
     }
 
