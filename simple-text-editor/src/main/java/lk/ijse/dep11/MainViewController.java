@@ -11,9 +11,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
+import java.io.*;
 
 public class MainViewController {
 
@@ -141,20 +139,14 @@ public class MainViewController {
 
         if(textFile != null){
             File file = new File(textFile.toURI());
-            try {
-                int read = -1;
-                FileInputStream fis = new FileInputStream(file);
-                BufferedInputStream bis = new BufferedInputStream(fis);
-                try {
-                    byte[] buffer = new byte[1024];
-                    String content = "";
-                    while ((read = bis.read(buffer)) != -1){
-                        content += new String(buffer,0,read);
-                    }
-                    txtNotePad.setText(content);
-                } finally {
-                    bis.close();
+            try(var fis = new FileReader(file);
+                var bis = new BufferedReader(fis)) {
+                String line = null;
+                String content = "";
+                while ((line = bis.readLine()) != null){
+                content += line + "\n";
                 }
+                txtNotePad.setText(content);
             } catch (Throwable t){
                 t.printStackTrace();
             }
