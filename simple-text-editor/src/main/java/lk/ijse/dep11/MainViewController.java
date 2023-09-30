@@ -7,8 +7,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
 
 public class MainViewController {
 
@@ -129,7 +134,33 @@ public class MainViewController {
 
     @FXML
     void miOpenOnAction(ActionEvent e) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text files","*.txt"));
+        fileChooser.setTitle("Select only text file");
+        File textFile = fileChooser.showOpenDialog(root.getScene().getWindow());
 
+        if(textFile != null){
+            File file = new File(textFile.toURI());
+            try {
+                int read = -1;
+                FileInputStream fis = new FileInputStream(file);
+                BufferedInputStream bis = new BufferedInputStream(fis);
+                try {
+                    byte[] buffer = new byte[1024];
+                    String content = "";
+                    while ((read = bis.read(buffer)) != -1){
+                        content += new String(buffer,0,read);
+                    }
+                    txtNotePad.setText(content);
+                } finally {
+                    bis.close();
+                }
+            } catch (Throwable t){
+                t.printStackTrace();
+            }
+        } else {
+            txtNotePad.setText(null);
+        }
     }
 
     @FXML
